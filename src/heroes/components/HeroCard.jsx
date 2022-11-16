@@ -16,14 +16,14 @@ export const HeroCard = ({
     <div className="col animate__animated animate__fadeIn cardHero">
       <div className="card">
         <div className="row no-gutters">
-          <div className="col-md-6">
+          <div className="col-md-7 col-lg-6">
             <Link to={`/hero/${id}`}>
               <img src={heroImageUrl} className="card-img" alt={superhero} />
             </Link>
           </div>
 
-          <div className="col-md-6 cardContent">
-            <div className="card-body">
+          <div className="col-md-5 col-lg-6 cardContent">
+            <div className="card-body px-1">
               <h5 className="card-title">{superhero}</h5>
               <small>Alter ego</small>
               <p className="card-text">{alter_ego}</p>

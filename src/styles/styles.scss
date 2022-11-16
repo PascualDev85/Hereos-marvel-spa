@@ -10,7 +10,7 @@ body {
     color: white;
     border-radius: 10px;
     padding: 20px;
-    margin: 20px;
+    margin: auto;
     width: 300px;
     height: 300px;
     display: flex;
@@ -36,10 +36,16 @@ body {
       width: 86%;
       border-radius: 5px;
       border: none;
-      padding: 7px;
-      background-color: rgb(0, 0, 255);
+      margin-top: 10px;
+      padding: 8px;
+      background-color: transparent;
+      border: 1px solid rgb(0, 0, 255);
       color: white;
       font-weight: bold;
+      &:hover {
+        background-color: rgb(0, 0, 255);
+        color: white;
+      }
     }
   }
   .navbar {
@@ -102,7 +108,7 @@ body {
       a {
         display: flex;
         justify-content: center;
-        margin-top: 62px;
+        // margin-top: 25px;
         color: rgb(136, 136, 136);
         text-decoration: none;
         &:hover {

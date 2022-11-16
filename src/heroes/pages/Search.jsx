@@ -30,13 +30,9 @@ export const Search = () => {
 
   return (
     <>
-      <h1 className=" animate__animated animate__fadeInRight">Search</h1>
-      <hr />
-      <div className="row">
-        <div className="col-5">
-          <h4>Searchin</h4>
-          <hr />
-          <form onSubmit={onSearchSubmit}>
+      <div className="searchContent mt-5">
+        <div className="col-12 col-md-8 col-lg-5 m-auto">
+          <form onSubmit={onSearchSubmit} className="d-flex">
             <input
               type="text"
               placeholder="Find your hero"
@@ -48,31 +44,30 @@ export const Search = () => {
             />
             <button
               type="submit"
-              className="btn m-1 btn-block btn-outline-primary"
+              className="btn mx-3 btn-block btn-outline-primary"
             >
               Search...
             </button>
           </form>
         </div>
-        <div className="col-7">
-          <h4>Results</h4>
-          <hr />
-
+        <div className="row d-flex justify-content-center">
           <div
-            className="alert alert-info animate__animated animate__fadeIn"
+            className="m-5 col-4 text-center alert alert-info animate__animated animate__fadeIn"
             style={{ display: showSearch ? "" : "none" }}
           >
             Search a hero
           </div>
           <div
-            className="alert alert-danger animate__animated animate__fadeIn"
+            className="m-5 col-10 col-md-6 col-lg-4 text-center alert alert-danger animate__animated animate__fadeIn"
             style={{ display: showError ? "" : "none" }}
           >
             There is no a hero with {q}
           </div>
-          {heroesFiltered.map((hero) => (
-            <HeroCard key={hero.id} {...hero} />
-          ))}
+          <div className="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-5 mb-4 mt-1">
+            {heroesFiltered.map((hero) => (
+              <HeroCard key={hero.id} {...hero} />
+            ))}
+          </div>
         </div>
       </div>
     </>

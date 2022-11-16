@@ -26,6 +26,7 @@ export const useForm = (initialForm = {}, validateForm) => {
     ...formState,
     formState,
     errors,
+    setErrors,
     onInputBlur,
     onInputChange,
     onResetForm,
