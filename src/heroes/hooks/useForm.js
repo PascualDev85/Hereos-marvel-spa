@@ -11,23 +11,19 @@ export const useForm = (initialForm = {}, validateForm) => {
       ...formState,
       [name]: value,
     });
+
+    // setear errores
+    setErrors(validateForm(formState));
   };
 
   const onResetForm = () => {
     setFormState(initialForm);
   };
 
-  const onInputBlur = (e) => {
-    onInputChange(e);
-    setErrors(validateForm(formState));
-  };
-
   return {
     ...formState,
     formState,
     errors,
-    setErrors,
-    onInputBlur,
     onInputChange,
     onResetForm,
   };

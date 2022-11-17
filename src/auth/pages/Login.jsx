@@ -3,26 +3,24 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "../../heroes/hooks/useForm";
 import { AuthContext } from "../context";
 
+const validationsForm = (formState) => {
+  let errors = {};
+
+  if (formState.name.trim().length < 4 || formState.name.trim().length > 12) {
+    errors.name = "Must be between 3 and 12 characters";
+  } else if (!formState.password.trim()) {
+    errors.password = "Password is required";
+  }
+
+  return errors;
+};
+
 export const Login = () => {
+  // destructuramos del contexto loginUser
   const { loginUser } = useContext(AuthContext);
+  // console.log(useContext(AuthContext));
 
-  const validationsForm = (formState) => {
-    let errors = {};
-
-    if (formState.name.trim().length < 4 || formState.name.trim().length > 12) {
-      errors.name = "Must be between 3 and 12 characters";
-    }
-
-    if (!formState.password.trim()) {
-      errors.password = "Password is required";
-    }
-
-    // validar name más largo de 3 caracteres
-
-    return errors;
-  };
-
-  const { name, password, onInputChange, errors, onInputBlur } = useForm(
+  const { name, password, onInputChange, errors } = useForm(
     {
       name: "",
       password: "",
@@ -35,10 +33,13 @@ export const Login = () => {
   const onLogin = (e) => {
     e.preventDefault();
 
+    // creamos esta constante para que cuando se loguee vuelva al mismo lugar
     const lastPath = localStorage.getItem("lastPath") || "/";
 
+    // seteamos el user en el contexto para introducir el name del user
     loginUser(name);
 
+    // redirigimos al user al último lugar donde estaba
     navigate(lastPath, { replace: true });
   };
 
@@ -53,7 +54,7 @@ export const Login = () => {
             name="name"
             value={name}
             onChange={onInputChange}
-            onBlur={onInputBlur}
+            // onBlur={onInputBlur}
             required
             autoComplete="off"
           />
@@ -73,7 +74,7 @@ export const Login = () => {
             name="password"
             value={password}
             onChange={onInputChange}
-            onBlur={onInputBlur}
+            // onBlur={onInputBlur}
             required
             autoComplete="off"
           />
