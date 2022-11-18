@@ -4,11 +4,9 @@ import { AuthContext } from "../../auth/context";
 import { ModalLogout } from "../../heroes/components/ModalLogout";
 
 export const Navbar = () => {
-  const { user, logoutUser } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
 
   const [modalShow, setModalShow] = useState(false);
-
-  // console.log(logoutUser);
 
   return (
     <>
@@ -55,7 +53,6 @@ export const Navbar = () => {
               {user?.name}
             </span>
             <button
-              // onClick={onLogout}
               onClick={() => setModalShow(true)}
               className="nav-item nav-link btn btn-outline-danger"
             >

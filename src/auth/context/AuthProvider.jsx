@@ -20,7 +20,6 @@ const init = () => {
 export const AuthProvider = ({ children }) => {
   const [authState, dispatch] = useReducer(authReducer, {}, init);
 
-  // crear user y grabarlo en el localstorage
   const loginUser = (name = "") => {
     const user = { id: new Date().getTime(), name };
 

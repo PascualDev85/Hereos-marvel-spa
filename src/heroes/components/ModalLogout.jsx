@@ -7,7 +7,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
 export const ModalLogout = (props) => {
-  const { user, logoutUser } = useContext(AuthContext);
+  const { logoutUser } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const onLogout = () => {

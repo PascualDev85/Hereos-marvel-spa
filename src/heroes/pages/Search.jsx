@@ -12,9 +12,7 @@ export const Search = () => {
 
   const navigate = useNavigate();
 
-  // obtener los query parameters con useLocation
   const location = useLocation();
-
   const { q = "" } = queryString.parse(location.search);
   const heroesFiltered = getHereosByName(q);
 
@@ -23,8 +21,6 @@ export const Search = () => {
 
   const onSearchSubmit = (e) => {
     e.preventDefault();
-
-    // query parameters
     navigate(`?q=${searchText}`);
   };
 

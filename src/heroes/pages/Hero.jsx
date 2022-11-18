@@ -5,7 +5,6 @@ import { getHeroById } from "../helpers";
 export const Hero = () => {
   const { id } = useParams();
 
-  // Mejora de performance con useMemo para evitar que se vuelva a ejecutar la función getHeroById, hastaque el la dependencia id cambie
   const hero = useMemo(() => getHeroById(id), [id]);
 
   const navigate = useNavigate();

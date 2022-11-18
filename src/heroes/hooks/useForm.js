@@ -12,7 +12,6 @@ export const useForm = (initialForm = {}, validateForm) => {
       [name]: value,
     });
 
-    // setear errores
     setErrors(validateForm(formState));
   };
 

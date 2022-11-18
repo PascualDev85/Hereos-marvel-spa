@@ -8,8 +8,8 @@ const validationsForm = (formState) => {
 
   if (formState.name.trim().length < 4 || formState.name.trim().length > 12) {
     errors.name = "Must be between 3 and 12 characters";
-  } else if (!formState.password.trim()) {
-    errors.password = "Password is required";
+  } else if (formState.password.trim().length < 5) {
+    errors.password = "Password min 6 characters";
   }
 
   return errors;
