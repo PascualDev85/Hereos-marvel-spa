@@ -16,9 +16,7 @@ const validationsForm = (formState) => {
 };
 
 export const Login = () => {
-  // destructuramos del contexto loginUser
   const { loginUser } = useContext(AuthContext);
-  // console.log(useContext(AuthContext));
 
   const { name, password, onInputChange, errors } = useForm(
     {
@@ -33,13 +31,10 @@ export const Login = () => {
   const onLogin = (e) => {
     e.preventDefault();
 
-    // creamos esta constante para que cuando se loguee vuelva al mismo lugar
     const lastPath = localStorage.getItem("lastPath") || "/";
 
-    // seteamos el user en el contexto para introducir el name del user
     loginUser(name);
 
-    // redirigimos al user al último lugar donde estaba
     navigate(lastPath, { replace: true });
   };
 
@@ -54,15 +49,11 @@ export const Login = () => {
             name="name"
             value={name}
             onChange={onInputChange}
-            // onBlur={onInputBlur}
             required
             autoComplete="off"
           />
           {errors.name && (
             <small className="text-danger m-0">{errors.name}</small>
-          )}
-          {errors.user && (
-            <small className="text-danger d-flex m-0">{errors.user}</small>
           )}
         </div>
 
@@ -74,7 +65,6 @@ export const Login = () => {
             name="password"
             value={password}
             onChange={onInputChange}
-            // onBlur={onInputBlur}
             required
             autoComplete="off"
           />
@@ -86,7 +76,7 @@ export const Login = () => {
         <button
           type="submit"
           className="btn btn-primary"
-          disabled={errors.name || errors.password || errors.user}
+          disabled={errors.name || errors.password}
         >
           Login
         </button>
