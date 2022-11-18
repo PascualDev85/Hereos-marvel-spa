@@ -48,7 +48,7 @@ export const Search = () => {
         </div>
         <div className="row d-flex justify-content-center">
           <div
-            className="m-5 col-7 text-center alert alert-info animate__animated animate__fadeIn"
+            className="m-5 col-10 text-center alert alert-info animate__animated animate__fadeIn"
             style={{ display: showSearch ? "" : "none" }}
           >
             Search a hero
@@ -59,7 +59,7 @@ export const Search = () => {
           >
             There is no a hero with {q}
           </div>
-          <div className="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-5 mb-4 mt-1">
+          <div className="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-5 mb-4 mt-1 contentHereoList">
             {heroesFiltered.map((hero) => (
               <HeroCard key={hero.id} {...hero} />
             ))}
