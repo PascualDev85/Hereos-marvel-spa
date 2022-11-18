@@ -71,6 +71,9 @@
       &:hover {
         transform: scale(1);
       }
+      .card-img {
+        border-radius: 5px 5px 0px 0px;
+      }
       .cardContent {
         h5 {
           font-size: 25px;
