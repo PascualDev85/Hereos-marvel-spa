@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
 
+function getImageUrl(id) {
+  return new URL(`../../assets/heroes/${id}.jpg`, import.meta.url).href;
+}
+
 export const HeroCard = ({ id, superhero, alter_ego, first_appearance }) => {
-  const heroImageUrl = `./public/heroes/${id}.jpg`;
+  // const heroImageUrl = `/assets/heroes/${id}.jpg`;
+  // const heroImageUrl = require.context("../../assets/heroes", true);
 
   return (
     <div className="col animate__animated animate__fadeIn cardHero">
@@ -9,7 +14,7 @@ export const HeroCard = ({ id, superhero, alter_ego, first_appearance }) => {
         <div className="row no-gutters">
           <div className="col-md-7 col-lg-6">
             <Link to={`/hero/${id}`}>
-              <img src={heroImageUrl} className="card-img" alt={superhero} />
+              <img src={getImageUrl(id)} className="card-img" alt={superhero} />
             </Link>
           </div>
 
