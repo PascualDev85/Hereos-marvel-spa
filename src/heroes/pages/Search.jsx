@@ -48,7 +48,7 @@ export const Search = () => {
         </div>
         <div className="row d-flex justify-content-center">
           <div
-            className="m-5 col-4 text-center alert alert-info animate__animated animate__fadeIn"
+            className="m-5 col-7 text-center alert alert-info animate__animated animate__fadeIn"
             style={{ display: showSearch ? "" : "none" }}
           >
             Search a hero
