@@ -1,0 +1,82 @@
+@import "../utils/vars.scss";
+
+.card {
+  background: #000000;
+  background: -moz-linear-gradient(top, #000000 0%, #000000 0%, #383838 70%);
+  background: -webkit-linear-gradient(
+    top,
+    #000000 0%,
+    #000000 0%,
+    #383838 100%
+  );
+  background: linear-gradient(to bottom, #000000 0%, #000000 0%, #383838 100%);
+  color: rgb(255, 255, 255);
+  box-shadow: 0 0 8px rgb(58, 58, 58);
+  border-radius: 10px;
+  &:hover {
+    box-shadow: 0 0 8px rgb(255, 255, 255);
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+  }
+
+  transition: all 0.5s ease-in-out;
+  .card-img {
+    border-radius: 5px 0 0px 5px;
+    box-shadow: 5px 0 12px rgb(0, 0, 0);
+  }
+  .cardContent {
+    padding-left: 0;
+    h5 {
+      font-size: 18px;
+      font-weight: 600;
+      border-bottom: solid 1px;
+      text-align: center;
+      margin-bottom: 25px;
+      color: $primary-color;
+    }
+    small {
+      color: $textCard-color;
+      font-size: 9px;
+    }
+    .pFappearance {
+      font-size: 13px;
+      min-height: 44px;
+    }
+    a {
+      display: flex;
+      justify-content: center;
+      color: $textCard-color;
+      text-decoration: none;
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+  }
+}
+
+@media (min-width: 576px) and (max-width: 990px) {
+  .cardContent {
+    padding-left: 16px !important;
+    .cardList {
+      padding-bottom: 0 !important;
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .contentHereoList {
+    row-gap: 0 !important;
+    .cardContent {
+      h5 {
+        font-size: 25px;
+      }
+      .card-text {
+        font-size: 18px;
+      }
+      .pFappearance {
+        font-size: 16px;
+      }
+      padding-left: 16px !important;
+    }
+  }
+}

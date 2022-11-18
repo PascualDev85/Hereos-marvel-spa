@@ -1,0 +1,20 @@
+.navbar {
+  box-shadow: 0 0px 5px rgb(255, 255, 255);
+  .partnerships {
+    margin-right: 50px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 990px) {
+  .contentUser {
+    margin-right: 30px;
+  }
+}
+
+@media (max-width: 575px) {
+  .contentUser {
+    position: absolute;
+    right: 54px;
+    top: 73px;
+  }
+}

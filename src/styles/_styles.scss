@@ -1,0 +1,28 @@
+@import "utils/vars.scss";
+
+* {
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $bg-color;
+
+  h2 {
+    color: $primary-color;
+    font-size: 4rem;
+    margin-top: 50px;
+  }
+  hr {
+    border: 1px solid $primary-color;
+  }
+}
+
+@media (max-width: 575px) {
+  .container {
+    h2 {
+      font-size: 50px;
+      text-align: center;
+    }
+  }
+}

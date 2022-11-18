@@ -1,6 +1,7 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
-import { Navbar } from "../../ui";
+import { NavbarHero } from "../../ui";
+import {} from "../../ui/components/NavbarHero";
 import { ModalLogout } from "../components/ModalLogout";
 
 import { Dc, Hero, Marvel, Search } from "../pages";
@@ -8,7 +9,7 @@ import { Dc, Hero, Marvel, Search } from "../pages";
 export const HeroesRoutes = () => {
   return (
     <>
-      <Navbar />
+      <NavbarHero />
       <ModalLogout />
       <div className="container">
         <Routes>
