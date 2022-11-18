@@ -20,6 +20,7 @@ body {
 
 @media (max-width: 575px) {
   .container {
+    overflow-x: hidden;
     h2 {
       font-size: 50px;
       text-align: center;
