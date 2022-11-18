@@ -15,7 +15,7 @@
   border-radius: 10px;
   &:hover {
     box-shadow: 0 0 8px rgb(255, 255, 255);
-    transform: scale(1.05);
+    transform: scale(1.03);
     transition: all 0.3s ease-in-out;
   }
 
@@ -65,18 +65,24 @@
 
 @media (max-width: 575px) {
   .contentHereoList {
+    overflow-x: hidden !important;
     row-gap: 0 !important;
-    .cardContent {
-      h5 {
-        font-size: 25px;
+    .card {
+      &:hover {
+        transform: scale(1);
       }
-      .card-text {
-        font-size: 18px;
+      .cardContent {
+        h5 {
+          font-size: 25px;
+        }
+        .card-text {
+          font-size: 18px;
+        }
+        .pFappearance {
+          font-size: 16px;
+        }
+        padding-left: 16px !important;
       }
-      .pFappearance {
-        font-size: 16px;
-      }
-      padding-left: 16px !important;
     }
   }
 }
