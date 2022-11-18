@@ -41,6 +41,7 @@
   .contentHero {
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
     .heroDescription {
       margin-top: 30px;
       padding: 0px;
