@@ -5,9 +5,6 @@ function getImageUrl(id) {
 }
 
 export const HeroCard = ({ id, superhero, alter_ego, first_appearance }) => {
-  // const heroImageUrl = `/assets/heroes/${id}.jpg`;
-  // const heroImageUrl = require.context("../../assets/heroes", true);
-
   return (
     <div className="col animate__animated animate__fadeIn cardHero">
       <div className="card">
