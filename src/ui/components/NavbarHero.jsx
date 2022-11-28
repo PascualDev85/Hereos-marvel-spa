@@ -6,7 +6,6 @@ import { ModalLogout } from "../../heroes/components/ModalLogout";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
 
 export const NavbarHero = () => {
   const { user } = useContext(AuthContext);
@@ -54,24 +53,6 @@ export const NavbarHero = () => {
               </ul>
             </Nav>
           </Navbar.Collapse>
-          {/* <Navbar.Collapse
-            id="basic-navbar-nav"
-            className="d-flex justify-content-end contentUser"
-          >
-            <Nav className="me-auto">
-              <ul className="navbar-nav ml-auto">
-                <span className="nav-item nav-link text-danger mx-3">
-                  {user?.name}
-                </span>
-                <button
-                  onClick={() => setModalShow(true)}
-                  className="nav-item text-light nav-link btn btn-outline-danger"
-                >
-                  Logout
-                </button>
-              </ul>
-            </Nav>
-          </Navbar.Collapse> */}
         </Container>
       </Navbar>
       <ModalLogout show={modalShow} onHide={() => setModalShow(false)} />
